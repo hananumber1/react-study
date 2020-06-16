@@ -3,14 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Comment from "./Comment";
 
-const valuesEx=[
-  {name:'111111', content:'11111'},
-  {name:'22222', content:'22222'},
-  {name:'33333', content:'33333'},
-  {name:'444444', content:'44444'},
-];
-var timer;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,22 +11,22 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-    let values = this.state.values;
-    timer = setInterval(()=>{
-      if(values.length < valuesEx.length){
-        let index = values.length;
-        values.push(valuesEx[index]);
-        this.setState({
-          values:values
-        });
-      } else if(timer) {
-        clearInterval(timer)
-      }
-    },1000)
+    console.log('componentDidMount ')
   }
-  return (
+  componentDidUpdate() {
+    console.log('componentDidUpdate')
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
+  }
 
-  );
+  render() {
+    return (
+        <div>
+
+        </div>
+    );
+  }
 
 }
 
